@@ -4,7 +4,6 @@
 * @a: first int 
 * @b: second int
 * Return 0
-* mikias
 */
 void swap_int(int *a, int *b)
 {
