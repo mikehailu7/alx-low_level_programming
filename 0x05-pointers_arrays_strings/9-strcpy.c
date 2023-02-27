@@ -3,7 +3,6 @@
  * @dest: char to check
  * @src: char to check
  * Return: 0 is success
- * mikias 
  */
 char *_strcpy(char *dest, char *src)
 {
