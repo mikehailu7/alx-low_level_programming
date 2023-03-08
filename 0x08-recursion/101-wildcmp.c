@@ -5,9 +5,8 @@
  * @s1: string_1 base address.
  * @s2: string_2 base address.
  * @i: left index.
- * @j: special index. 
+ * @j: special index. (joker)
  * Return: 1 if s is palindrome, 0 otherwise.
- * mikias
  */
 int str_checker(char *s1, char *s2, int i, int j)
 {
