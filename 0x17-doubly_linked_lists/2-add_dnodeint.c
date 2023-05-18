@@ -4,12 +4,12 @@
 /**
  * add node at the end.
  * add_dnodeint: This will add a new node at the start of the list.
- * @p: this is the node
+ * @n: this is the node
  * @head: double pointer to the beginning of the linked list
  * Author: mikiashailu
  * Return: This will return p if it is right.
  */
-dlistint_t *add_dnodeint(dlistint_t **head, const int p)
+dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
 	dlistint_t *new;
 
@@ -18,7 +18,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int p)
 	new = malloc(sizeof(dlistint_t));
 	if (new == NULL)
 		return (NULL);
-	new->p = p;
+	new->n = n;
 	new->prev = NULL;
 	new->next = *head;
 	*head = new;
