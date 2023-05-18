@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include "lists.h"
+#include <stdio.h>
 /**
  * print_dlistint - This is a function that print all the elements of the lsit
  * Autor: mikiashailu
