@@ -1,7 +1,5 @@
 import random
 import ctypes
-# dynamiclibrary
-# mikiasHailu
 
 cops = ctypes.CDLL('./100-operations.so')
 a = random.randint(-111, 111)
