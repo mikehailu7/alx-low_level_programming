@@ -4,7 +4,6 @@
  * hash_table_delete: This funciton will remove the hash table.
  * @ht: THis one is the table to be deleted.
  * Author: MIkiasHailu
- * Fun: hash table delete
  */
 void hash_table_delete(hash_table_t *ht)
 {
