@@ -2,8 +2,8 @@
 #define _HASH_TABLES_H_
 
 #include <stdlib.h>
-#include <stdio.h>
 #include <string.h>
+#include <stdio.h>
 
 /**
  * struct hash_node_s: This structure shows the Node of the hash table
@@ -22,7 +22,6 @@ typedef struct hash_node_s
  * Author: MikiasHailu
  * Fun: hash
  */
-
 typedef struct hash_table_s
 {
 	unsigned long int size;
@@ -38,14 +37,9 @@ void hash_table_print(const hash_table_t *ht);
 void hash_table_delete(hash_table_t *ht);
 
 /**
- * struct shash_node_s - Node of a sorted hash table
- *
- * @key: The key, string
- * The key is unique in the HashTable
- * @value: The value corresponding to a key
- * @next: A pointer to the next node of the List
- * @sprev: A pointer to the previous element of the sorted linked list
- * @snext: A pointer to the next element of the sorted linked list
+ * struct shash_node_s: THis struncture shows the Node of a sorted hash table
+ * Author: MikiasHailu
+ * Fun: hash
  */
 typedef struct shash_node_s
 {
@@ -57,7 +51,7 @@ typedef struct shash_node_s
 } shash_node_t;
 
 /**
- * struct shash_node_s: THis struncture shows the Node of a sorted hash table
+ * struct shash_table_s: This structure represents the data structure of the sorted hash table.
  * Author: MikiasHailu
  * Fun: hash
  */
@@ -71,9 +65,10 @@ typedef struct shash_table_s
 
 shash_table_t *shash_table_create(unsigned long int size);
 int shash_table_set(shash_table_t *ht, const char *key, const char *value);
-char *shash_table_get(const shash_table_t *ht, const char *key);
 void shash_table_print(const shash_table_t *ht);
+char *shash_table_get(const shash_table_t *ht, const char *key);
 void shash_table_print_rev(const shash_table_t *ht);
 void shash_table_delete(shash_table_t *ht);
 
 #endif
+
