@@ -40,6 +40,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	return (1);
 }
 
+
+
 /**
  * make_hash_node: THis function will creates a new node.
  * @key: This character is the key for the node
@@ -71,3 +73,4 @@ hash_node_t *make_hash_node(const char *key, const char *value)
 	node->next = NULL;
 	return (node);
 }
+
