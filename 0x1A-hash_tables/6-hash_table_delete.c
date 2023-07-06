@@ -4,27 +4,30 @@
  * hash_table_delete: This funciton will remove the hash table.
  * @ht: THis one is the table to be deleted.
  * Author: MIkiasHailu
+ * Fun: delete
  */
 void hash_table_delete(hash_table_t *ht)
 {
-	unsigned long int m;
-	hash_node_t *next;
+	hash_node_t *bucket, *aux_free;
+	unsigned long int m = 0;
 
-	if (ht == NULL || ht->array == NULL || ht->size == 0)
+	if (!ht)
 		return;
+
 	for (m = 0; m < ht->size; m++)
 	{
-		while (ht->array[m] != NULL)
+		bucket = ht->array[m];
+		while (bucket)
 		{
-			next = ht->array[m]->next;
-			free(ht->array[m]->key);
-			free(ht->array[m]->value);
-			free(ht->array[m]);
-			ht->array[m] = next;
+			aux_free = bucket;
+			bucket = bucket->next;
+			if (aux_free->key)
+				free(aux_free->key);
+			if (aux_free->value)
+				free(aux_free->value);
+			free(aux_free);
 		}
 	}
 	free(ht->array);
-	ht->array = NULL;
-	ht->size = 0;
 	free(ht);
 }
