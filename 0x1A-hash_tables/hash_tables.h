@@ -6,12 +6,9 @@
 #include <string.h>
 
 /**
- * struct hash_node_s - Node of a hash table
- *
- * @key: The key, string
- * The key is unique in the HashTable
- * @value: The value corresponding to a key
- * @next: A pointer to the next node of the List
+ * struct hash_node_s: This structure shows the Node of the hash table
+ * Author: MikiasHailu
+ * Fun: hash
  */
 typedef struct hash_node_s
 {
@@ -21,13 +18,11 @@ typedef struct hash_node_s
 } hash_node_t;
 
 /**
- * struct hash_table_s - Hash table data structure
- *
- * @size: The size of the array
- * @array: An array of size @size
- * Each cell of this array is a pointer to the first node of a linked list,
- * because we want our HashTable to use a Chaining collision handling
+ * struct hash_table_s: This structure shows the data structure of the hash table.
+ * Author: MikiasHailu
+ * Fun: hash
  */
+
 typedef struct hash_table_s
 {
 	unsigned long int size;
@@ -62,14 +57,9 @@ typedef struct shash_node_s
 } shash_node_t;
 
 /**
- * struct shash_table_s - Sorted hash table data structure
- *
- * @size: The size of the array
- * @array: An array of size @size
- * Each cell of this array is a pointer to the first node of a linked list,
- * because we want our HashTable to use a Chaining collision handling
- * @shead: A pointer to the first element of the sorted linked list
- * @stail: A pointer to the last element of the sorted linked list
+ * struct shash_node_s: THis struncture shows the Node of a sorted hash table
+ * Author: MikiasHailu
+ * Fun: hash
  */
 typedef struct shash_table_s
 {
