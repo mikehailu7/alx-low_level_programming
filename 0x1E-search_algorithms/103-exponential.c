@@ -3,7 +3,7 @@
  * _binary_search: This function Searches for a value in a sorted array of integers using binary search.
  * Author: Mikias Hailu
  * Return: This return If the value is not present or the array is NULL, -1.
- */h
+ */
 int _binary_search(int *array, size_t left, size_t right, int value)
 {
 	size_t m;
