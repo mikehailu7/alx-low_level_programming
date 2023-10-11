@@ -4,34 +4,22 @@
  * Author: MikiasHailu
  * Return: This will return index of the number.
  */
-int rec_search(int *array, size_t size, int value)
+int advanced_binary_recursive(int *array, size_t left, size_t right, int value)
 {
-	size_t half = size / 2;
 	size_t m;
-	if (array == NULL || size == 0)
+	if (right < left)
 		return (-1);
-	printf("Searching in array");
+	printf("Searching in array: ");
+	for (m = left; m < right; m++)
+		printf("%d, ", array[m]);
+	printf("%d\n", array[m]);
 
-	for (m = 0; m < size; m++)
-		printf("%s %d", (m == 0) ? ":" : ",", array[m]);
-
-	printf("\n");
-
-	if (half && size % 2 == 0)
-		half--;
-
-	if (value == array[half])
-	{
-		if (half > 0)
-			return (rec_search(array, half + 1, value));
-		return ((int)half);
-	}
-
-	if (value < array[half])
-		return (rec_search(array, half + 1, value));
-
-	half++;
-	return (rec_search(array + half, size - half, value) + half);
+	m = left + (right - left) / 2;
+	if (array[m] == value && (m == left || array[m - 1] != value))
+		return (m);
+	if (array[m] >= value)
+		return (advanced_binary_recursive(array, left, m, value));
+	return (advanced_binary_recursive(array, m + 1, right, value));
 }
 
 /**
@@ -41,9 +29,7 @@ int rec_search(int *array, size_t size, int value)
  */
 int advanced_binary(int *array, size_t size, int value)
 {
-	int idx;
-	idx = rec_search(array, size, value);
-	if (idx >= 0 && array[idx] != value)
+	if (array == NULL || size == 0)
 		return (-1);
-	return (idx);
+	return (advanced_binary_recursive(array, 0, size - 1, value));
 }
